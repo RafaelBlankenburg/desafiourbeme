@@ -1,0 +1,24 @@
+<!-- fiis/templates/fiis/home.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Fundo Imobiliário</title>
+</head>
+<body>
+    <h1>Consulta de Fundo Imobiliário</h1>
+    <form method="get">
+        <input type="text" name="q" placeholder="Digite o código ou nome do fundo" value="{{ query }}">
+        <button type="submit">Pesquisar</button>
+    </form>
+
+    {% if query %}
+        <h2>Resultado da Pesquisa</h2>
+        {% if fundo %}
+            <p><strong>Código:</strong> {{ fundo.codigo }}</p>
+        {% else %}
+            <p>Nenhum fundo encontrado com esse nome ou código.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
