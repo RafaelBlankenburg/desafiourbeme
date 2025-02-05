@@ -63,10 +63,27 @@
 <body>
     <div class="container">
         <h1>Consulta de Fundo Imobiliário</h1>
-        <form method="get" action="{% url 'result' %}">
+        <form method="get">
             <input type="text" name="q" placeholder="Digite o código do fundo imobiliário" value="{{ query }}">
             <button type="submit">Pesquisar</button>
         </form>
+
+        {% if query %}
+            <div class="result">
+                {% if fundo %}
+                    <p>Exibindo Resultados para: <strong>{{ fundo.codigo }}</strong>.</p>
+                    <h3>Indicadores</h3>
+                    <ul>
+                        <li><strong>Valor em Caixa: </strong> <small>R$</small> {{ valor_em_caixa }}</li>
+                        <li><strong>Liquidez Média Diária:</strong> <small>R$</small> {{ liquidez_media_diaria }}</li>
+                        <li><strong>Valor Patrimonial por Cota:</strong> <small>R$</small> {{ val_patrimonial_p_cota }}</li>
+                        <li><strong>Número de Cotistas:</strong> {{ numero_de_cotistas }}</li>
+                    </ul>
+                {% else %}
+                    <p>Nenhum fundo encontrado com esse código.</p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 </body>
 </html>
