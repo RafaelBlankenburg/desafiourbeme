@@ -16,6 +16,14 @@
         <h2>Resultado da Pesquisa</h2>
         {% if fundo %}
             <p><strong>Código:</strong> {{ fundo.codigo }}</p>
+            
+            <h3>Indicadores</h3>
+            <ul>
+                <li><strong>Valor em Caixa:</strong> {{ valor_em_caixa }}</li>
+                <li><strong>Liquidez Média Diária:</strong> {{ liquidez_media_diaria }}</li>
+                <li><strong>Valor Patrimonial por Cota:</strong> {{ val_patrimonial_p_cota }}</li>
+                <li><strong>Número de Cotistas:</strong> {{ numero_de_cotistas }}</li>
+            </ul>
         {% else %}
             <p>Nenhum fundo encontrado com esse nome ou código.</p>
         {% endif %}
