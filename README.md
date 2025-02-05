@@ -1,4 +1,4 @@
-# desafiourbeme
+# desafiourbeme - por Rafael Fernando Blankenburg
 Para resolver o problema proposto eu optei por utilizar o framework de python Django em conjunto de mais duas bibliotecas, a beautifulsoup4 e a requests. Se você não possuir elas instaladas basta utilizar os comandos (para windows):
 
  py -m ensurepip --upgrade (instala o pip)
